@@ -10,7 +10,7 @@ function serviceFound(service) {
 
 function findNFCService() {
 	webinos.discovery.findServices(
-		new ServiceType('http://webinos.org/api/nfc'),
+		new ServiceType('http://webinos.org/api/nfc.read'),
 		{ onFound: serviceFound }
 	);
 }
@@ -19,19 +19,22 @@ function listener (event) {
 	var tag = event.tag;  // object proxying the NFC Tag
 	console.log("tag technology: " + tag.tech);
 	tag.close = function () {
-		console.log("lost contact with the Tag");
+	console.log("lost contact with the Tag");
 	};
 }
 
 function success () {
-	alert("successfully registered NFC event listener");
+	document.getElementById("result").innerHTML="successfully registered NFC event listener"; 
 }
 
 function fail () {
-	alert("failed to register NFC event listener");
+	document.getElementById("result").innerHTML="failed to register NFC event listener"; 
 }
 
-function listen() {
-	webinos.nfc.addListener(listener, success, fail);
+function nfcRead() {
+	for (var s in serviceList) {
+		var nfcTag = new serviceList[s].addListener(listener, success, fail);
+	}
 }
-	
+
+window.onload = findNFCService;
