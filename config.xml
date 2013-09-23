@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" id="http://ubiapps.com/apps/nfc-shopper" version="0.0.1" height="300">  
+  <name>NFC Shopper</name>  
+   <description>Allows shopping with nfc</description>   
+   <author email="ivanglautier@gmail.com">Ivan Glautier</author> 
+   <content src="index.html"/>  
+   <icon src="unsigned-icon.png"/>     
+</widget>
