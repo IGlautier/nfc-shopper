@@ -4,5 +4,6 @@
    <description>Allows shopping with nfc</description>   
    <author email="ivanglautier@gmail.com">Ivan Glautier</author> 
    <content src="index.html"/>  
+   <feature name="http://webinos.org/api/nfc" required="true" />
    <icon src="unsigned-icon.png"/>     
 </widget>
